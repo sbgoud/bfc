@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import imageIcon from './icons/image.svg';  // Path to your image type icon
+import defaultIcon from './icons/default-file.svg'; // Path to your default icon
 
 const FileDisplay = () => {
   const [files, setFiles] = useState([]);
@@ -55,13 +57,13 @@ const FileDisplay = () => {
 // Helper to render each file item
 const renderFileItem = (file) => {
     const fileType = getFileType(file.name); 
-    let fileIcon = 'default-file.svg'; // Some default
+    let fileIcon = defaultIcon; // Some default
   
     // Simple file type detection based on extension
     if (['jpg', 'jpeg', 'png', 'gif'].includes(fileType)) {
-      fileIcon = 'image.svg'; 
+      fileIcon = imageIcon; 
     } else if (['pdf'].includes(fileType)) {
-      fileIcon = 'document.svg';
+      fileIcon = defaultIcon;
     } 
   
     return (
