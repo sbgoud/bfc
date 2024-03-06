@@ -1,0 +1,23 @@
+/* In your CSS file (e.g., global.css) */
+.file-display {
+    /* ... other general styles for the file area */
+    padding: 2px;
+  }
+  
+  .file-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .file-item {
+    display: flex; 
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .file-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; 
+  }
+  

@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
-from telethon import TelegramClient, events  
+from telethon import TelegramClient, events
+from telethon.tl.types import InputDocumentFileLocation  # Import for file download logic 
+
 
 # Your Telegram API ID and Hash 
 api_id = 27317545 
@@ -21,6 +23,22 @@ async def get_files():
                 })
 
     return jsonify(messages) 
+
+app.route('/download/<filename>')
+def download_file(filename):
+    async with client:
+        # Search for the file in your 'Saved Messages'
+        # You might want to make this search more robust, 
+        # potentially storing some link between the original filename 
+        # and how it's stored in Telegram.
+        for message in await client.iter_messages('me'):
+            if message.file and message.file.name == filename: 
+                result = await client.download_media(message, file=filename)
+
+                # Prepare a Flask response to serve the file
+                return send_file(result, as_attachment=True)
+
+    return "File not found", 404  # Return an error if the file is not found 
 
 if __name__ == '__main__':
     client.start() 
