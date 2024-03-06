@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import './styles/global.css';  
+import NavigationBar from './components/common/NavigationBar';
+import Sidebar from './components/common/Sidebar';
+import TelegramLoginButton from './components/telegramLogin/TelegramLoginButton';
+import FileDisplay from './features/fileDisplay/FileDisplay';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <NavigationBar />
+      <div className="main-content">
+        <Sidebar />
+        <div className="content-area">
+          <h1>BharatFreeCloud</h1> 
+          <TelegramLoginButton /> 
+          <FileDisplay /> {/* Visible after login */}
+        </div>
+      </div>
     </div>
   );
 }
