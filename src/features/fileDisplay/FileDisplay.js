@@ -13,6 +13,7 @@ const FileDisplay = () => {
       try {
         const response = await fetch('/fetchFiles');
         const data = await response.json();
+        console.log('Data:', data);
 
         // Assuming your data is structured like this:
         // data = [{name: 'my_document.pdf', ...}, {name: 'cool_photo.jpg', ...}] 
