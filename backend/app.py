@@ -3,7 +3,7 @@ from telethon import TelegramClient, events
 
 # Your Telegram API ID and Hash 
 api_id = 27317545 
-api_hash = 'yd1f33a01246e61a342e5b4cece1bf916'
+api_hash = 'd1f33a01246e61a342e5b4cece1bf916'
 
 client = TelegramClient('bharatfreecloudtest', api_id, api_hash) 
 
@@ -24,4 +24,4 @@ async def get_files():
 
 if __name__ == '__main__':
     client.start() 
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False, use_debugger=False) # Modified for testing
