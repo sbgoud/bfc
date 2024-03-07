@@ -14,9 +14,10 @@ function App() {
     console.log('User data:', user); 
     setIsLoggedIn(true);
   };
-
+console.log("app.js is called")
   return (
     <div className="app-container">
+
       <NavigationBar />
       <div className="main-content">
         <Sidebar />

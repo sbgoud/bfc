@@ -25,7 +25,7 @@ async def get_files():
     return jsonify(messages) 
 
 app.route('/download/<filename>')
-def download_file(filename):
+async def download_file(filename):
     async with client:
         # Search for the file in your 'Saved Messages'
         # You might want to make this search more robust, 

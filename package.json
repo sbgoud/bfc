@@ -16,10 +16,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
-
-    "start": "webpack serve --open",
-  "build": "webpack",
-
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

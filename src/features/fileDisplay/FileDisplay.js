@@ -22,6 +22,7 @@ const FileDisplay = () => {
         // data = [{name: 'my_document.pdf', ...}, {name: 'cool_photo.jpg', ...}] 
 
         setFiles(data);
+        console.log(files)
       } catch (error) {
         setError(error); // Store the error if something goes wrong
         console.error('Error fetching files:', error);  // Log the error 
@@ -29,9 +30,9 @@ const FileDisplay = () => {
         setIsLoading(false);
       }
     };
-
+console.log("FileDisplay is called");
     fetchFiles();
-  }, []);
+  }, [files]);
 
   // Rendering logic with loading and error display  
   return (
